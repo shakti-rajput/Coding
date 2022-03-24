@@ -1,4 +1,4 @@
-#include <iostream>
+#include <bits/stdc++.h>
 #include <string>
 using namespace std;
 
@@ -18,7 +18,7 @@ int main ()
 		if(mystr=="")
 		break;
   }
-  
+
   cout << "I like " << mystr << " too!\n";
   return 0;
 }
