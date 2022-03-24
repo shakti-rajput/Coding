@@ -8,8 +8,10 @@ typedef vector<int> vi;
 #define all(c) (c).begin(), (c).end()
 #define FOR(i,a,b) for (int i = (a); i < (b); i++)
 #define FORIT(i,c) for (__typeof__((c).begin()) i = (c).begin();i != (c).end(); i++)
+#define fastIO	ios_base::sync_with_stdio(false);cin.tie(0);cout.tie(0);
 
 int main() {
+    fastIO;
     int n=5;
     vi a_list={0,1,2,3,4,5};
     sort(all(a_list));
