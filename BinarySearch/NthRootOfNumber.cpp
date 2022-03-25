@@ -31,6 +31,6 @@ double getNthRoot(int n, int m) {
 int main() {
 	int n, m;
 	cin >> n >> m;
-	getNthRoot(n, m);
+	cout<<getNthRoot(n, m);
 	return 0;
 }
