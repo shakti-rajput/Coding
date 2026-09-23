@@ -99,7 +99,7 @@ static Singleton& getInstance() {
 }
 
 18. Name Mangling
-• Name mangling for overloading in C++
+• Name mangling is for acheving overloading in C++. as compiler at compile time may name fun(int z) as funci(int z) and fun(double z) as fund(double z)
 
 19. `push_back` vs `emplace_back`
 
@@ -140,17 +140,52 @@ int &r = i;
 25. Factory Design Pattern
 
 The Factory Design Pattern separates object creation from the main application logic.
-
 Instead of having the Amazon class directly create every type of product, a separate `ProductFactory` handles the creation.
-
 This way, when a new product is added, the object-creation logic is handled in the factory rather than modifying the main Amazon class.
 
-### Virtual Destructor
-A base class needs a virtual destructor when you might delete a derived object through a base-class pointer. <br>
-If you're not going to delete derived objects through a base pointer, a virtual destructor may not be necessary.<br>
-Animal* animal = new Dog(); <br>
-delete animal; <br>
+26. Virtual Destructor
+A base class needs a virtual destructor when you might delete a derived object through a base-class pointer. 
+If you're not going to delete derived objects through a base pointer, a virtual destructor may not be necessary.
+    Animal* animal = new Dog(); 
+    delete animal;
 Here the base destructor should be virtual.
 
-Using namespace std is considered bad because if u import some library that has the same function as the same name lets say as cout then it will be bad as we will have conflict
-Return Value Of printf And scanf
+27. Using namespace std is considered bad because if u import some library that has the same function as the same name lets say as cout then it will be bad as we will have conflict
+
+28. Return Value Of printf And scanf is the number of character printf is printing to console or how many variables it is reading from the console.
+
+29. Copy constructor -> Foo(const Foo &bar) it is const because we dont want to modify the value and it is passed by refrence so that it will not go on recursively calling the copy constructor
+
+30. Code Bloating Do not declare unnecessary variable or inline function if it is used in multiple places.
+
+31. placement new  Foo* p = new (memory) Foo(); Construct a Foo object at the memory address memory. Need manual destructor p->~Foo();
+
+32. Override keyword is used explicitly just to remove the confusion if mistakenly.
+
+33. 1. Compile-time polymorphism
+        Function overloading
+        Operator overloading
+        Templates
+        
+    2. Runtime polymorphism ⭐        
+        Inheritance -  Inheritance creates the relationship,
+        Virtual functions - virtual enables runtime dispatch
+        Function overriding -  overriding provides the derived behavior
+        Base pointer/reference - the base pointer/reference gives us the common interface through which runtime polymorphism is demonstrated.
+
+34. U can use final keyword to stop inheriting your class
+
+35. typeid(obj) to check if two objects are of same class or not.
+
+36. When it is about struct either variable, function, or inheritance it is public but class is private.
+
+37. Vector -> It gives advantage of array and linkedlist both
+
+38. To attain function chaining u have to return *this;
+    b.seta(5).setb(19).print() when first seta(5) was called we didnt return the actual object we return the copy of object
+39. Plain enum can be interpreted as index 0 to the first value while class enum u have to explicitly pass the value
+
+40.  Stop Someone From Copying Your Objects
+        1-  Keep your constructor and assignment operator as private in your class.
+        2-  Inherit dummy class with private copy constructor and assignment operator.
+        3-  = delete to your constructor and assignment constructor.
